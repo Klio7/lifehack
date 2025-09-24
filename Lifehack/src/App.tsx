@@ -1,7 +1,7 @@
-import Card from "./components/card";
+import Page from "./page/page";
 
 function App() {
-  return <Card />;
+  return <Page />;
 }
 
 export default App;
