@@ -33,7 +33,7 @@ function MainCard() {
           ускорить медленное интернет-соединение.
         </Card.Description>
       </Card.Body>
-      <Card.Footer justifyContent="flex-end" gap="32px">
+      <Card.Footer justifyContent="flex-end" alignContent="center" gap="32px" p="24px">
         <CardButton bg="transparent" variant="surface" buttonTitle="Share" />
         <CardButton bg="rgb(232, 221, 212);" variant="subtle" buttonTitle="Show new lifehack" />
       </Card.Footer>
