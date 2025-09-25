@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { Card } from "@chakra-ui/react";
 import CardButton from "./cardButton";
+import { lifehacks } from "@/assets/lifehackList";
 
 function MainCard() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  function changeLifehack() {
+    setCurrentIndex((previousIndex) => (previousIndex + 1) % lifehacks.length);
+  }
   return (
     <Card.Root
       m="40px"
@@ -29,13 +36,17 @@ function MainCard() {
           mb="32px"
           textAlign="center"
         >
-          Положите телефон в режим полёта на 1-2 минуты, а затем включите обратно — это поможет
-          ускорить медленное интернет-соединение.
+          {lifehacks[currentIndex].text}
         </Card.Description>
       </Card.Body>
       <Card.Footer justifyContent="flex-end" alignContent="center" gap="32px" p="24px">
         <CardButton bg="transparent" variant="surface" buttonTitle="Share" />
-        <CardButton bg="rgb(232, 221, 212);" variant="subtle" buttonTitle="Show new lifehack" />
+        <CardButton
+          bg="rgb(232, 221, 212);"
+          variant="subtle"
+          buttonTitle="Show new lifehack"
+          onClick={changeLifehack}
+        />
       </Card.Footer>
     </Card.Root>
   );
