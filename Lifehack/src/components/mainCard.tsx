@@ -1,5 +1,5 @@
 import { Card } from "@chakra-ui/react";
-import Button from "./button";
+import CardButton from "./cardButton";
 
 function MainCard() {
   return (
@@ -21,13 +21,21 @@ function MainCard() {
       >
         Lifehack of the Day
       </Card.Header>
-      <Card.Description fontSize="28px" fontWeight="400" lineHeight="1.4" mb="32px">
-        Положите телефон в режим полёта на 1-2 минуты, а затем включите обратно — это поможет
-        ускорить медленное интернет-соединение.
-      </Card.Description>
-      <Card.Footer justifyContent="flex-end">
-        <Button buttonTitle="Share" />
-        <Button buttonTitle="Show new lifehack" />
+      <Card.Body>
+        <Card.Description
+          fontSize="28px"
+          fontWeight="400"
+          lineHeight="1.4"
+          mb="32px"
+          textAlign="center"
+        >
+          Положите телефон в режим полёта на 1-2 минуты, а затем включите обратно — это поможет
+          ускорить медленное интернет-соединение.
+        </Card.Description>
+      </Card.Body>
+      <Card.Footer justifyContent="flex-end" gap="32px">
+        <CardButton bg="transparent" variant="surface" buttonTitle="Share" />
+        <CardButton bg="rgb(232, 221, 212);" variant="subtle" buttonTitle="Show new lifehack" />
       </Card.Footer>
     </Card.Root>
   );
