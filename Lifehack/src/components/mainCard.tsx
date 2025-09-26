@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Card } from "@chakra-ui/react";
 import CardButton from "./cardButton";
 import { lifehacks } from "@/assets/lifehackList";
+import { ShareDialog } from "./shareDialog";
 
 function MainCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
   function changeLifehack() {
     setCurrentIndex((previousIndex) => (previousIndex + 1) % lifehacks.length);
   }
@@ -40,7 +40,7 @@ function MainCard() {
         </Card.Description>
       </Card.Body>
       <Card.Footer justifyContent="flex-end" alignContent="center" gap="32px" p="24px">
-        <CardButton bg="transparent" variant="surface" buttonTitle="Share" />
+        <ShareDialog />
         <CardButton
           bg="rgb(232, 221, 212);"
           variant="subtle"
