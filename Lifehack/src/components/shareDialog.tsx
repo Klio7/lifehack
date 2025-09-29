@@ -1,4 +1,4 @@
-import { Button, Dialog, HStack, Link, Icon } from "@chakra-ui/react";
+import { Portal, Dialog, HStack, Link, Icon } from "@chakra-ui/react";
 import { FaVk, FaInstagram, FaFacebook, FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 import CardButton from "./cardButton";
 
@@ -17,35 +17,39 @@ export function ShareDialog() {
   const title = document.title;
 
   return (
-    <Dialog.Root>
+    <Dialog.Root size="sm" placement="center">
       <Dialog.Trigger asChild>
         <CardButton bg="transparent" variant="surface" buttonTitle="Share" />
       </Dialog.Trigger>
-      <Dialog.Content>
-        <Dialog.Header>Поделиться</Dialog.Header>
-        <Dialog.Body>
-          <HStack spacing={6} justify="center" mt={4} mb={4}>
-            <Link href={shareLinks.vk(url, title)} isExternal>
-              <Icon as={FaVk} boxSize={8} />
-            </Link>
-            <Link href={shareLinks.instagram(url)} isExternal>
-              <Icon as={FaInstagram} boxSize={8} />
-            </Link>
-            <Link href={shareLinks.facebook(url)} isExternal>
-              <Icon as={FaFacebook} boxSize={8} />
-            </Link>
-            <Link href={shareLinks.whatsapp(url, title)} isExternal>
-              <Icon as={FaWhatsapp} boxSize={8} />
-            </Link>
-            <Link href={shareLinks.telegram(url, title)} isExternal>
-              <Icon as={FaTelegramPlane} boxSize={8} />
-            </Link>
-          </HStack>
-        </Dialog.Body>
-        <Dialog.Footer>
-          <Button>Закрыть</Button>
-        </Dialog.Footer>
-      </Dialog.Content>
+      <Portal>
+        <Dialog.Backdrop />
+        <Dialog.Positioner>
+          <Dialog.Content>
+            <Dialog.Body bg="rgb(250, 247, 242)">
+              <HStack justify="center" mt={4} mb={4} gap="1.5rem">
+                <Link href={shareLinks.vk(url, title)} isExternal>
+                  <Icon as={FaVk} boxSize={10} color="#27272a" />
+                </Link>
+                <Link href={shareLinks.instagram(url)} isExternal>
+                  <Icon as={FaInstagram} boxSize={10} color="#27272a" />
+                </Link>
+                <Link href={shareLinks.facebook(url)} isExternal>
+                  <Icon as={FaFacebook} boxSize={10} color="#27272a" />
+                </Link>
+                <Link href={shareLinks.whatsapp(url, title)} isExternal>
+                  <Icon as={FaWhatsapp} boxSize={10} color="#27272a" />
+                </Link>
+                <Link href={shareLinks.telegram(url, title)} isExternal>
+                  <Icon as={FaTelegramPlane} boxSize={10} color="#27272a" />
+                </Link>
+              </HStack>
+            </Dialog.Body>
+            <Dialog.Footer justifyContent="center" bg="rgb(250, 247, 242)">
+              <CardButton bg="transparent" variant="surface" buttonTitle="Close" />
+            </Dialog.Footer>
+          </Dialog.Content>
+        </Dialog.Positioner>
+      </Portal>
     </Dialog.Root>
   );
 }
