@@ -42,7 +42,7 @@ function MainCard() {
       <Card.Footer justifyContent="flex-end" alignContent="center" gap="32px" p="24px">
         <ShareDialog />
         <CardButton
-          bg="rgb(232, 221, 212);"
+          bg="rgb(232, 221, 212)"
           variant="subtle"
           buttonTitle="Show new lifehack"
           onClick={changeLifehack}
