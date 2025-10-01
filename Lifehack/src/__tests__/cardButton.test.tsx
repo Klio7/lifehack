@@ -5,8 +5,8 @@ import CardButton from "@/components/cardButton.tsx";
 test("Кнопка отражает название", () => {
   render(
     <Provider>
-      <CardButton bg="transparent" variant="surface" buttonTitle="Share" />
+      <CardButton bg="transparent" variant="surface" buttonTitle="Поделиться" />
     </Provider>
   );
-  expect(screen.getByText(/Share/i)).toBeInTheDocument();
+  expect(screen.getByText(/Поделиться/i)).toBeInTheDocument();
 });

@@ -29,13 +29,16 @@ export function ShareDialog() {
   return (
     <Dialog.Root size="sm" placement="center">
       <Dialog.Trigger asChild>
-        <CardButton bg="transparent" variant="surface" buttonTitle="Share" />
+        <CardButton bg="transparent" variant="surface" buttonTitle="Поделиться" />
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />
         <Dialog.Positioner>
           <Dialog.Content>
             <Dialog.Body bg="rgb(250, 247, 242)">
+              <Dialog.Header fontSize="24px" fontWeight="400" justifyContent="center">
+                Выберите соцсеть
+              </Dialog.Header>
               <HStack justify="center" mt={4} mb={4} gap="1.5rem">
                 <Link href={shareLinks.vk(url, title)} target="_blank" rel="noopener noreferrer">
                   <Icon as={FaVk} boxSize={10} color="#27272a" />
@@ -64,7 +67,7 @@ export function ShareDialog() {
             </Dialog.Body>
             <Dialog.Footer justifyContent="center" bg="rgb(250, 247, 242)">
               <Dialog.CloseTrigger asChild>
-                <CardButton bg="transparent" variant="surface" buttonTitle="Close" />
+                <CardButton bg="transparent" variant="surface" buttonTitle="Закрыть" />
               </Dialog.CloseTrigger>
             </Dialog.Footer>
           </Dialog.Content>

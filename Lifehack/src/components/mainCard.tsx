@@ -26,7 +26,7 @@ function MainCard() {
         lineHeight="1.1"
         mb="32px"
       >
-        Lifehack of the Day
+        Лайфхак дня
       </Card.Header>
       <Card.Body>
         <Card.Description
@@ -35,6 +35,7 @@ function MainCard() {
           lineHeight="1.4"
           mb="32px"
           textAlign="center"
+          data-testid="lifehackText"
         >
           {lifehacks[currentIndex].text}
         </Card.Description>
@@ -44,7 +45,7 @@ function MainCard() {
         <CardButton
           bg="rgb(232, 221, 212)"
           variant="subtle"
-          buttonTitle="Show new lifehack"
+          buttonTitle="Новый лайфхак"
           onClick={changeLifehack}
         />
       </Card.Footer>
