@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card } from "@chakra-ui/react";
 import CardButton from "./cardButton";
 import { lifehacks } from "@/assets/lifehackList";
-import { ShareDialog } from "./shareDialog";
+import ShareDialog from "./shareDialog";
 
 function MainCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
