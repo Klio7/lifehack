@@ -1,69 +1,50 @@
-# React + TypeScript + Vite
+# Лайфхак дня
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сайт для вдохновения и упрощения жизни на каждый день. Показывает случайный лайфхак, помогает записывать идеи и мгновенно делиться полезными советами в соцсетях.
 
-Currently, two official plugins are available:
+![Лайфхакдня](./lifehack.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## О проекте
 
-## Expanding the ESLint configuration
+"Лайфхак дня" — одностраничное приложение (SPA), созданное для быстрой мотивации и обмена полезными советами. Каждый день вы получаете новый лайфхак и можете поделиться им с друзьями в популярных социальных сетях.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Технологии
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React
+- TypeScript
+- Vite
+- ChakraUI
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Функционал
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Генерация случайного лайфхака дня
+- Кнопка «Новый лайфхак» для получения другого совета
+- Возможность поделиться лайфхаком в VK, Facebook, Telegram, WhatsApp, Instagram
+- Интерфейс полностью на русском языке
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Структура проекта
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+coverage/ // отчет о покрытии тестами
+public/ // статические файлы и assets
+src/ // исходный код приложения
+├── assets/ // изображения, иконки
+├── components/ // React компоненты
+├── page/ // страницы SPA
+tests/ // директория с тестами
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Запуск и установка
+
+Установка зависимостей:
+npm install
+
+## Запуск проекта в режиме разработки:
+
+npm run dev
+
+## Тестирование
+
+Покрытие тестами: 78%
+
+## Автор
+
+Анна Одинцова
