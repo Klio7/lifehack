@@ -25,6 +25,7 @@ function MainCard() {
         fontWeight="700"
         lineHeight="1.1"
         mb="32px"
+        color="yellow.400"
       >
         Лайфхак дня
       </Card.Header>
